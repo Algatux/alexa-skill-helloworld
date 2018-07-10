@@ -10,9 +10,13 @@ export default class ErrorHandler implements Alexa.ErrorHandler {
     }
 
     handle(handlerInput: Alexa.HandlerInput, error: Error): Response {
+        console.log(handlerInput.requestEnvelope.request);
+        console.log(error);
+
+        const errorMsg: string = `Error (${error.name}) : ${error.message}`;
 
         return handlerInput.responseBuilder
-            .speak(`C'è stato un errore!`)
+            .speak(errorMsg)
             .getResponse()
     }
 
