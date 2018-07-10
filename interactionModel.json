@@ -1,0 +1,68 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "app di prova",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "cosa puoi fare",
+                        "dimmi cosa puoi fare"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SayYourNameIntent",
+                    "slots": [],
+                    "samples": [
+                        "come ti chiami",
+                        "il tuo nome",
+                        "qual'è il tuo nome",
+                        "di il tuo nome",
+                        "dimmi il tuo nome"
+                    ]
+                },
+                {
+                    "name": "WantToVisitIntent",
+                    "slots": [
+                        {
+                            "name": "city",
+                            "type": "AMAZON.City"
+                        }
+                    ],
+                    "samples": [
+                        "mi piacerebbe visitare {city}",
+                        "voglio visitare {city}",
+                        "vorrei visitare {city}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "AMAZON.City",
+                    "values": [
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "Varedo"
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "Milano"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
