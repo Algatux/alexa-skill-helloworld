@@ -1,21 +1,19 @@
 
 import * as Alexa from 'ask-sdk-core';
-import { Response, IntentRequest } from 'ask-sdk-model';
+ import { Response as AskResponse } from 'ask-sdk-model';
+import AbstractClientRequestHandler from './AbstractClientRequestHandler';
 
-export default class WantToVisitIntentHandler implements Alexa.RequestHandler {
+export default class WantToVisitIntentHandler extends AbstractClientRequestHandler implements Alexa.RequestHandler {
 
     public canHandle(handlerInput: Alexa.HandlerInput): boolean {
-
+ 
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-                && handlerInput.requestEnvelope.request.intent.name === 'SayYourNameIntent'
+                && handlerInput.requestEnvelope.request.intent.name === 'WantToVisitIntent'
     }
 
-    public handle(handlerInput: Alexa.HandlerInput): Response {
+    public handle(handlerInput: Alexa.HandlerInput): AskResponse {
 
-        const request: IntentRequest = handlerInput.requestEnvelope.request as IntentRequest;
-        const city = request.intent.slots && request.intent.slots.city;
-
-        const speak: string = `hai detto di voler visitare ${city}`;
+        const speak: string = `hai detto di voler visitare stocazzo`;        
 
         return handlerInput
             .responseBuilder
